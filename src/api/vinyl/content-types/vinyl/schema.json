@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vinyls",
+  "info": {
+    "singularName": "vinyl",
+    "pluralName": "vinyls",
+    "displayName": "Vinyl",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "label": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "release_date": {
+      "type": "date"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "inch 7\"\"",
+        "inch 10\"\"",
+        "inch 12\"\""
+      ]
+    },
+    "tracks": {
+      "type": "json"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}
